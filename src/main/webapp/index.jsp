@@ -21,10 +21,6 @@
     </div>
 </div>
 
-<%--<div class="w3-container w3-grey w3-opacity w3-center w3-padding">--%>
-<%--    <button class="w3-btn w3-round-large w3-green" onclick="location.href='/index.html'">Back to main</button>--%>
-<%--</div>--%>
-
 </body>
 </html>
 
@@ -33,11 +29,4 @@
 
 
 
-<%--<html>--%>
-<%--<body>--%>
-<%--<h2>Hola-Hola!!</h2>--%>
 
-<%--    <a href="hola">Click here to see servlet</a>--%>
-
-<%--</body>--%>
-<%--</html>--%>

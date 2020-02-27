@@ -28,7 +28,6 @@ public class AddServletHibr extends HttpServlet {
         usrHbr = new UserHibrService();
         List<User> usrsLst = usrHbr.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
-
         RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/addhbr.jsp");
         requestDispatcher.forward(reqv, resp);
 

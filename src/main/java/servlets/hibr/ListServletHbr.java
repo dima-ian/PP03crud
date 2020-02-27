@@ -25,7 +25,6 @@ public class ListServletHbr extends HttpServlet {
 
         UserHibrService uhs = new UserHibrService();
         List<User> usrsLst = uhs.getAllUsers();
-        System.out.println(usrsLst);
         reqv.setAttribute("usrsLst", usrsLst);
         RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/listhbr.jsp");
         requestDispatcher.forward(reqv, resp);
