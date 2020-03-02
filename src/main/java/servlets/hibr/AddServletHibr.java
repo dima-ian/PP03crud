@@ -25,7 +25,7 @@ public class AddServletHibr extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest reqv, HttpServletResponse resp) throws ServletException, IOException {
 
-        usrHbr = new UserHibrService();
+        usrHbr = UserHibrService.getInstance();
         List<User> usrsLst = usrHbr.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
         RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/addhbr.jsp");
@@ -42,7 +42,7 @@ public class AddServletHibr extends HttpServlet {
         String ssn = req.getParameter("ssn");
 
         User user = new User(name, sex, age, email, ssn);
-        usrHbr = new UserHibrService();
+        usrHbr = UserHibrService.getInstance();
 
         if (user.getSsn().equals("")) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);

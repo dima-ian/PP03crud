@@ -1,5 +1,6 @@
 package util;
 
+import dao.UserDaoFactory;
 import dao.UserHibernateDAO;
 import model.User;
 
@@ -14,6 +15,8 @@ public class TestMain {
         System.out.println(uhd.getAllUsers());
 
         User usr = new User();
+
+        System.out.println(UserDaoFactory.getConnectionDAO().getAllUsers());
 
 
     }

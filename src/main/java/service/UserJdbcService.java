@@ -82,7 +82,7 @@ public class UserJdbcService implements UserDAO {
     }
 
     private static UserJdbcDAO getUserDAO() {
-        return new UserJdbcDAO(DBHelper.getInstance().getMysqlConnection());
+        return new UserJdbcDAO(DBHelper.getInstance().getConnection());
     }
 
 }

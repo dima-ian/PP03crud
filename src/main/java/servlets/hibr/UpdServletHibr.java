@@ -24,7 +24,7 @@ public class UpdServletHibr extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest reqv, HttpServletResponse resp) throws ServletException, IOException {
-        usrHbr = new UserHibrService();
+        usrHbr = UserHibrService.getInstance();
         List<User> usrsLst = usrHbr.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
         RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/edithbr.jsp");
@@ -40,7 +40,7 @@ public class UpdServletHibr extends HttpServlet {
         String ssn = req.getParameter("ssn");
         User user = new User(name, sex, age, email, ssn);
 
-        usrHbr = new UserHibrService();
+        usrHbr = UserHibrService.getInstance();
 
         if (usrHbr.updateUserzData(user)) {
             resp.setStatus(HttpServletResponse.SC_OK);

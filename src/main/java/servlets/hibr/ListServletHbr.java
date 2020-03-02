@@ -23,7 +23,7 @@ public class ListServletHbr extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest reqv, HttpServletResponse resp) throws ServletException, IOException {
 
-        UserHibrService uhs = new UserHibrService();
+        UserHibrService uhs = UserHibrService.getInstance();
         List<User> usrsLst = uhs.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
         RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/listhbr.jsp");

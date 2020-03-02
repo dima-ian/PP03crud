@@ -24,7 +24,7 @@ public class DelServletHibr extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest reqv, HttpServletResponse resp) throws ServletException, IOException {
-        usrHbr = new UserHibrService();
+        usrHbr = UserHibrService.getInstance();
         List<User> usrsLst = usrHbr.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
         RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/delhbr.jsp");
@@ -33,7 +33,7 @@ public class DelServletHibr extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        usrHbr = new UserHibrService();
+        usrHbr = UserHibrService.getInstance();
         String ssn = req.getParameter("ssn");
 
         if (!ssn.isEmpty()) {

@@ -9,7 +9,16 @@ import java.util.List;
 
 public class UserHibrService implements UserDAO {
 
-    public UserHibrService() {  }
+    private UserHibrService() {  }
+
+    private static UserHibrService usrHbrSrv;
+
+    public static UserHibrService getInstance() {
+        if (usrHbrSrv == null) {
+            usrHbrSrv = new UserHibrService();
+        }
+        return usrHbrSrv;
+    }
 
     @Override
     public List<User> getAllUsers() {
