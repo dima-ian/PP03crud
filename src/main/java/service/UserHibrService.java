@@ -1,9 +1,9 @@
 package service;
 
+import dao.UserDaoFactory;
 import dao.UserHibernateDAO;
 import interfaces.UserDAO;
 import model.User;
-import util.HiberConnector;
 
 import java.util.List;
 
@@ -59,6 +59,6 @@ public class UserHibrService implements UserDAO {
         }
     }
 
-    private static UserHibernateDAO getUserHiber() { return new UserHibernateDAO(HiberConnector.getSessionFactory());  }
+    private static UserHibernateDAO getUserHiber() { return (UserHibernateDAO) UserDaoFactory.getConnectionDAO();  }
 
 }

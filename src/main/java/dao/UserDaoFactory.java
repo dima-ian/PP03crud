@@ -10,8 +10,6 @@ import util.PropsGetter;
 
 public class UserDaoFactory {
 
-    //private static SessionFactory sesFact;
-
     public static UserDAO getConnectionDAO() {
 
         String daoType = PropsGetter.getDaoType("DAO");
@@ -22,19 +20,11 @@ public class UserDaoFactory {
                 return new UserHibernateDAO(createSessionFactory(DBHelper.getInstance().getConfiguration()));
 
 
-            default: throw new IllegalArgumentException("no such DAO type: " + daoType);
+            default: throw new IllegalArgumentException("No such DAO type: " + daoType);
         }
     }
 
-//    public static SessionFactory getSessionFactory() {
-//        if (sesFact == null) {
-//            sesFact = createSessionFactory();
-//        }
-//        return sesFact;
-//    }
-
     private static SessionFactory createSessionFactory(Configuration cfg) {
-        //Configuration configuration = getConfiguration();
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
         builder.applySettings(cfg.getProperties());
         ServiceRegistry serviceRegistry = builder.build();

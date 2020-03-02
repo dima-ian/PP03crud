@@ -1,19 +1,13 @@
 package util;
 
 import model.User;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBHelper {
-
-//    private static SessionFactory sesFact;
 
     private DBHelper() { }
 
@@ -48,21 +42,6 @@ public class DBHelper {
             throw new IllegalStateException();
         }
     }
-
-//    public static SessionFactory getSessionFactory() {
-//        if (sesFact == null) {
-//            sesFact = createSessionFactory();
-//        }
-//        return sesFact;
-//    }
-
-//    private static SessionFactory createSessionFactory() {
-//        Configuration configuration = getConfiguration();
-//        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
-//        builder.applySettings(configuration.getProperties());
-//        ServiceRegistry serviceRegistry = builder.build();
-//        return configuration.buildSessionFactory(serviceRegistry);
-//    }
 
     public Configuration getConfiguration() {
 

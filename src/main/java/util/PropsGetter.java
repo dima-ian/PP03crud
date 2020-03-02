@@ -18,7 +18,7 @@ public class PropsGetter {
             Properties prop = new Properties();
             String propFileName = "dao.properties";
 
-            inputStream = UserDaoFactory.class.getClassLoader().getResourceAsStream(propFileName);
+            inputStream = PropsGetter.class.getClassLoader().getResourceAsStream(propFileName);
 
             if (inputStream != null) {
                 prop.load(inputStream);
