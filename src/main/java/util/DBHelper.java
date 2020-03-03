@@ -2,12 +2,20 @@ package util;
 
 import model.User;
 import org.hibernate.cfg.Configuration;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class DBHelper {
+
+    private static InputStream inputStream;
+
+    private static String connType = "";
 
     private DBHelper() { }
 
@@ -55,6 +63,30 @@ public class DBHelper {
         cfg.setProperty("hibernate.show_sql", "true");
         cfg.setProperty("hibernate.hbm2ddl.auto", "update");
         return cfg;
+    }
+
+    public String getDaoType(String daoType) {
+
+        try {
+            Properties prop = new Properties();
+            String propFileName = "dao.properties";
+
+            inputStream = DBHelper.class.getClassLoader().getResourceAsStream(propFileName);
+
+            if (inputStream != null) {
+                prop.load(inputStream);
+                inputStream.close();
+            } else {
+                inputStream.close();
+                throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
+            }
+
+            connType = prop.getProperty(daoType);
+
+        } catch (Exception x) {  x.printStackTrace();  }
+
+        return connType;
+
     }
 
 }
