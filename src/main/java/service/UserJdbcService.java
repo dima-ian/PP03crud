@@ -1,7 +1,7 @@
 package service;
 
 import dao.UserJdbcDAO;
-import interfaces.UserDAO;
+import dao.UserDAO;
 import model.User;
 import util.DBHelper;
 
