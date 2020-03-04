@@ -41,10 +41,11 @@ public class UserHibernateDAO implements UserDAO {
         Session session = sesFact.openSession();
         Transaction trx = session.beginTransaction();
         User fu = getUserBySsn(user);
-        fu.setAge(user.getAge());
-        fu.setEmail(user.getEmail());
-        fu.setName(user.getName());
-        fu.setSex(user.getSex());
+        if (user.getAge() != 0) { fu.setAge(user.getAge());  }
+        if (!user.getEmail().equals("")) { fu.setEmail(user.getEmail()); }
+        if (!user.getName().equals("")) { fu.setName(user.getName()); }
+        if (!user.getSex().equals("")) { fu.setSex(user.getSex()); }
+        fu.setRole(user.getRole());
         session.update(fu);
         trx.commit();
         session.close();

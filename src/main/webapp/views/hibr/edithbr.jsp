@@ -84,6 +84,9 @@
             <label>Email:
                 <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
             </label>
+            <label>Role:
+                <input type="text" name="role" pattern="USER|ADMIN" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+            </label>
         </form>
     </div>
 
@@ -103,6 +106,7 @@
                     <th>Age</th>
                     <th>Email</th>
                     <th>SSN</th>
+                    <th>Role</th>
                 </tr>
                 </thead>
 
@@ -115,6 +119,7 @@
                         <td>${user.age}</td>
                         <td>${user.email}</td>
                         <td>${user.ssn}</td>
+                        <td>${user.role}</td>
                     </tr>
                 </c:forEach>
                 </tbody>

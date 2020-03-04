@@ -38,7 +38,8 @@ public class UpdServletHibr extends HttpServlet {
         byte age = (byte) Integer.parseInt(req.getParameter("age"));
         String email = req.getParameter("email");
         String ssn = req.getParameter("ssn");
-        User user = new User(name, sex, age, email, ssn);
+        String role = req.getParameter("role");
+        User user = new User(name, sex, age, email, ssn, role);
 
         usrHbr = UserHibrService.getInstance();
 

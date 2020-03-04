@@ -86,6 +86,7 @@
                     <th>Age</th>
                     <th>Email</th>
                     <th>SSN</th>
+                    <th>Role</th>
                 </tr>
                 </thead>
 
@@ -98,6 +99,7 @@
                         <td>${user.age}</td>
                         <td>${user.email}</td>
                         <td>${user.ssn}</td>
+                        <td>${user.role}</td>
                     </tr>
                 </c:forEach>
                 </tbody>

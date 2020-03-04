@@ -26,23 +26,28 @@ public class User {
     @Column(name = "ssn")
     private String ssn;
 
+    @Column(name = "role")
+    private String role;
+
     public User( ) { }
 
-    public User(long id, String name, String sex, byte age, String email, String ssn) {
+    public User(long id, String name, String sex, byte age, String email, String ssn, String role) {
         this.id = id;
         this.name = name;
         this.sex = sex;
         this.age = age;
         this.email = email;
         this.ssn = ssn;
+        this.role = role;
     }
 
-    public User(String name, String sex, byte age, String email, String ssn) {
+    public User(String name, String sex, byte age, String email, String ssn, String role) {
         this.name = name;
         this.sex = sex;
         this.age = age;
         this.email = email;
         this.ssn = ssn;
+        this.role = role;
     }
 
     public User(String name, String email) {
@@ -98,6 +103,9 @@ public class User {
         this.ssn = ssn;
     }
 
+    public String getRole() {  return role;  }
+
+    public void setRole(String role) {  this.role = role;  }
 
     @Override
     public String toString() {
@@ -108,6 +116,7 @@ public class User {
                 ", age=" + age +
                 ", email='" + email + '\'' +
                 ", ssn='" + ssn + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }

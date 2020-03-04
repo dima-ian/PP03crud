@@ -21,13 +21,14 @@ public class UserJdbcDAO implements UserDAO {
     @Override
     public boolean addUser(User user) {
         try {
-            String sql = "INSERT INTO usrs (name, sex, age, email, ssn) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO usrs (name, sex, age, email, ssn, role) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getSex());
             preparedStatement.setByte(3, user.getAge());
             preparedStatement.setString(4, user.getEmail());
             preparedStatement.setString(5, user.getSsn());
+            preparedStatement.setString(6, user.getRole());
             preparedStatement.executeUpdate();
             preparedStatement.close();
             return true;
@@ -65,14 +66,18 @@ public class UserJdbcDAO implements UserDAO {
             if (user.getEmail().equals("")) {
                 user.setEmail(usr.getEmail());
             }
+            if (user.getRole().equals("")) {
+                user.setRole((usr.getRole()));
+            }
 
-            PreparedStatement preStmt = conn.prepareStatement("UPDATE usrs SET name=?, sex=?, age=?, email=? WHERE ssn=? ");
+            PreparedStatement preStmt = conn.prepareStatement("UPDATE usrs SET name=?, sex=?, age=?, email=?, role=? WHERE ssn=? ");
             if (validateUser(usr.getSsn())) {
                 preStmt.setString(1, user.getName());
                 preStmt.setString(2, user.getSex());
                 preStmt.setByte(3, user.getAge());
                 preStmt.setString(4, user.getEmail());
-                preStmt.setString(5, usr.getSsn());
+                preStmt.setString(5, user.getRole());
+                preStmt.setString(6, usr.getSsn());
                 preStmt.executeUpdate();
                 preStmt.close();
                 return true;
@@ -100,7 +105,8 @@ public class UserJdbcDAO implements UserDAO {
                         result.getString("sex"),
                         result.getByte("age"),
                         result.getString("email"),
-                        result.getString("ssn")));
+                        result.getString("ssn"),
+                        result.getString("role")));
                 result.next();
             }
             result.close();
@@ -122,7 +128,8 @@ public class UserJdbcDAO implements UserDAO {
                     result.getString("sex"),
                     result.getByte("age"),
                     result.getString("email"),
-                    result.getString("ssn"));
+                    result.getString("ssn"),
+                    result.getString("role"));
             stmt.close();
             return usr;
         } catch (SQLException e) { e.printStackTrace(); return null; }
@@ -136,7 +143,7 @@ public class UserJdbcDAO implements UserDAO {
             stmt.execute("select * from usrs where ssn='" + ssn + "'");
             ResultSet rs = stmt.getResultSet();
             while (rs.next()) {
-                usr = new User(rs.getLong(1), rs.getString(4), rs.getString(5), rs.getByte(2), rs.getString(3), rs.getString(6));
+                usr = new User(rs.getLong(1), rs.getString(4), rs.getString(5), rs.getByte(2), rs.getString(3), rs.getString(6), rs.getString(7));
             }
             rs.close();
             stmt.close();

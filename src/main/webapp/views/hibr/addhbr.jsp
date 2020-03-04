@@ -77,6 +77,9 @@
             <label>SSN:
                 <input type="text" name="ssn" required="required" pattern="[A-Za-z0-9]{1,20}" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
             </label>
+            <label>Role:
+                <input type="text" name="role" pattern="USER|ADMIN" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+            </label>
             <button type="submit" class="w3-btn w3-green w3-round-large w3-margin-bottom">Submit</button>
         </form>
     </div>
@@ -96,6 +99,7 @@
                     <th>Age</th>
                     <th>Email</th>
                     <th>SSN</th>
+                    <th>Role</th>
                 </tr>
                 </thead>
 
@@ -108,6 +112,7 @@
                         <td>${user.age}</td>
                         <td>${user.email}</td>
                         <td>${user.ssn}</td>
+                        <td>${user.role}</td>
                     </tr>
                 </c:forEach>
                 </tbody>
