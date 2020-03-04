@@ -1,4 +1,4 @@
 # Project exclude paths
 /target/
-/taks.txt
+/src/main/resources/taks.txt
 src/main/java/util/TestMain.java
