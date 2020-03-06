@@ -88,4 +88,16 @@ public class UserHibernateDAO implements UserDAO {
         return smUsr;
     }
 
+    public User getUserByEmail(String email) {
+        Session session = sesFact.openSession();
+        Transaction transaction = session.beginTransaction();
+        User smUsr = null;
+        Query query = (Query) session.getEntityManagerFactory().createEntityManager().createQuery("from User u where u.email = :email");
+        query.setParameter("email", email);
+        smUsr = (User) query.getSingleResult(); //.getResultList().get(0);
+        transaction.commit();
+        session.close();
+        return smUsr;
+    }
+
 }

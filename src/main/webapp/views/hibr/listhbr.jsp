@@ -2,8 +2,6 @@
 <%@ page import="model.User" %>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -42,14 +40,17 @@
             text-align: left;
             padding: 8px;
         }
-
         tr:nth-child(even){background-color: #f2f2f2}
-
         th {
             background-color: #4CAF50;
             color: white;
         }
     </style>
+
+    <style>
+        form label { font-weight:bold; }
+    </style>
+
 </head>
 
 <body class="w3-light-grey">
@@ -95,7 +96,8 @@
 </div>
 
 <div class="w3-container w3-grey w3-opacity w3-center w3-padding">
-    <button class="w3-btn w3-round-large w3-green" onclick="location.href='/index.jsp'">Back to main</button>
+    <button class="w3-btn w3-round-large w3-green" onclick="location.href='/' ">Back to main</button>
 </div>
+
 </body>
 </html>

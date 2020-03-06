@@ -2,4 +2,4 @@
 /target/
 /src/main/resources/taks.txt
 src/main/java/util/TestMain.java
-!/src/main/resources/taks.txt
+

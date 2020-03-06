@@ -35,19 +35,21 @@
             border-collapse: collapse;
             width: 100%;
         }
-
         th, td {
             text-align: left;
             padding: 8px;
         }
-
         tr:nth-child(even){background-color: #f2f2f2}
-
         th {
             background-color: #4CAF50;
             color: white;
         }
     </style>
+
+    <style>
+        form label { font-weight:bold; }
+    </style>
+
 </head>
 
 <body class="w3-light-grey">
@@ -78,7 +80,7 @@
                 <input type="text" name="ssn" required="required" pattern="[A-Za-z0-9]{1,20}" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
             </label>
             <label>Role:
-                <input type="text" name="role" pattern="USER|ADMIN" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+                <input type="text" placeholder="USER | ADMIN" name="role" pattern="USER|ADMIN" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
             </label>
             <button type="submit" class="w3-btn w3-green w3-round-large w3-margin-bottom">Submit</button>
         </form>
@@ -123,7 +125,7 @@
 </div>
 
 <div class="w3-container w3-grey w3-opacity w3-center w3-padding">
-    <button class="w3-btn w3-round-large w3-green" onclick="location.href='/index.jsp'">Back to main</button>
+    <button class="w3-btn w3-round-large w3-green" onclick="location.href='/authpage.jsp'">Back to main</button>
 </div>
 
 </body>

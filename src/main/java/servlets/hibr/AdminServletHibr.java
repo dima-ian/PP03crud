@@ -15,10 +15,10 @@ import java.util.List;
 @WebServlet(
         name = "UpdUserHbr",
         description = "Редактирование данных пользователя - Updating...",
-        urlPatterns = "/updhbr"
+        urlPatterns = "/admin"
 )
 
-public class UpdServletHibr extends HttpServlet {
+public class AdminServletHibr extends HttpServlet {
 
     private UserHibrService usrHbr;
 
@@ -27,7 +27,8 @@ public class UpdServletHibr extends HttpServlet {
         usrHbr = UserHibrService.getInstance();
         List<User> usrsLst = usrHbr.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
-        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/edithbr.jsp");
+        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/adminhbr.jsp");
+        //RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("/admin");
         requestDispatcher.forward(reqv, resp);
     }
 

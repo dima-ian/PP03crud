@@ -27,7 +27,8 @@ public class DelServletHibr extends HttpServlet {
         usrHbr = UserHibrService.getInstance();
         List<User> usrsLst = usrHbr.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
-        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/delhbr.jsp");
+        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/adminhbr.jsp");
+        //RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("/admin");
         requestDispatcher.forward(reqv, resp);
     }
 
