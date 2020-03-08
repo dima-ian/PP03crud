@@ -12,24 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(
-        name = "UpdUserHbr",
-        description = "Редактирование данных пользователя - Updating...",
-        urlPatterns = "/admin"
-)
 
+// name = "UpdUserHbr",   description = "Редактирование данных пользователя - Updating...",   urlPatterns =
+
+@WebServlet("/admin/users")
 public class AdminServletHibr extends HttpServlet {
 
-    private UserHibrService usrHbr;
+    private UserHibrService usrHbr = UserHibrService.getInstance();;
 
     @Override
     protected void doGet(HttpServletRequest reqv, HttpServletResponse resp) throws ServletException, IOException {
-        usrHbr = UserHibrService.getInstance();
+
         List<User> usrsLst = usrHbr.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
-        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/adminhbr.jsp");
-        //RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("/admin");
-        requestDispatcher.forward(reqv, resp);
+        reqv.getRequestDispatcher("/adminhbr.jsp").forward(reqv,resp);
+
+        //requestDispatcher.forward(reqv, resp);
     }
 
     @Override
@@ -53,7 +51,4 @@ public class AdminServletHibr extends HttpServlet {
         req.setAttribute("user", user);
         doGet(req, resp);
     }
-
-
-
 }

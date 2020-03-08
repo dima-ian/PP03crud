@@ -67,6 +67,14 @@ public class UserHibrService implements UserDAO {
         }
     }
 
+    public User getUserBySsn(String ssn) {
+        try {
+            return getUserHiber().getUserBySsn(ssn);
+        } catch (Exception x) {
+            x.printStackTrace(); return null;
+        }
+    }
+
     private static UserHibernateDAO getUserHiber() { return (UserHibernateDAO) UserDaoFactory.getConnectionDAO();  }
 
 }

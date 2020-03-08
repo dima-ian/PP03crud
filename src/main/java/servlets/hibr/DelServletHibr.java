@@ -11,13 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+//name = "DelUserHbr",
+//        description = "Редактирование данных пользователя - Updating...",
+//        urlPatterns =
 
-@WebServlet(
-        name = "DelUserHbr",
-        description = "Редактирование данных пользователя - Updating...",
-        urlPatterns = "/delhbr"
-)
-
+@WebServlet("/admin/del")
 public class DelServletHibr extends HttpServlet {
 
     private UserHibrService usrHbr;
@@ -27,8 +25,8 @@ public class DelServletHibr extends HttpServlet {
         usrHbr = UserHibrService.getInstance();
         List<User> usrsLst = usrHbr.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
-        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/adminhbr.jsp");
-        //RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("/admin");
+        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("/adminhbr.jsp");
+
         requestDispatcher.forward(reqv, resp);
     }
 

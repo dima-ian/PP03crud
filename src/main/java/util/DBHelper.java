@@ -57,7 +57,7 @@ public class DBHelper {
         cfg.addAnnotatedClass(User.class);
         cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL57Dialect");
         cfg.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-        cfg.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/crud_hiber_dm?useUnicode=true&serverTimezone=UTC&useSSL=false");
+        cfg.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/students?useUnicode=true&serverTimezone=UTC&useSSL=false");
         cfg.setProperty("hibernate.connection.username", "root");
         cfg.setProperty("hibernate.connection.password", "q1");
         cfg.setProperty("hibernate.show_sql", "true");

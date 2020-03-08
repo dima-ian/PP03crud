@@ -12,12 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(
-        name = "ShowAllUsersHbr",
-        description = "Вывод всех пользователей - списком...",
-        urlPatterns = "/user"
-)
+ // name = "ShowAllUsersHbr", description = "Вывод всех пользователей - списком...", urlPatterns =
 
+@WebServlet("/user/list")
 public class ListServletHbr extends HttpServlet {
 
     @Override
@@ -26,7 +23,7 @@ public class ListServletHbr extends HttpServlet {
         UserHibrService uhs = UserHibrService.getInstance();
         List<User> usrsLst = uhs.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
-        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/listhbr.jsp");
+        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("/listhbr.jsp");
         requestDispatcher.forward(reqv, resp);
 
     }
@@ -37,7 +34,7 @@ public class ListServletHbr extends HttpServlet {
         UserHibrService uhs = UserHibrService.getInstance();
         List<User> usrsLst = uhs.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
-        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("views/hibr/listhbr.jsp");
+        RequestDispatcher requestDispatcher = reqv.getRequestDispatcher("/listhbr.jsp");
         requestDispatcher.forward(reqv, resp);
 
     }

@@ -8,6 +8,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -24,25 +25,23 @@ public class UserFilter implements Filter {
     public void doFilter(ServletRequest reqv, ServletResponse resp, FilterChain filterChain) throws IOException, ServletException {
 
         final HttpServletRequest req = (HttpServletRequest) reqv;
-
-        final String email = req.getParameter("email");
-
-        System.out.println("User filter: " + usrHbr.getUserByEmail(email));
+        final HttpSession session = req.getSession();
+        final String email = (String) session.getAttribute("email");
 
         final User user = usrHbr.getUserByEmail(email);
 
+        System.out.println("User filter: " + user);
 
         if (user == null) {
             reqv.getRequestDispatcher("/errpage.jsp").forward(reqv, resp);
         }
         if (user.getRole().equalsIgnoreCase("user")) {
-            reqv.getRequestDispatcher("/user").forward(reqv, resp);
-        }
-        if (user.getRole().equalsIgnoreCase("admin")) {
-            reqv.getRequestDispatcher("/admin").forward(reqv, resp);
+            HttpServletRequest request = (HttpServletRequest) reqv;
+            reqv.getRequestDispatcher(request.getRequestURI()).forward(reqv, resp);
         }
         else {
             HttpServletRequest request = (HttpServletRequest) reqv;
+            System.out.println(request.getRequestURI());
             reqv.getRequestDispatcher(request.getRequestURI()).forward(reqv, resp);
         }
     }

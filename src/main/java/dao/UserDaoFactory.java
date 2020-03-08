@@ -29,4 +29,11 @@ public class UserDaoFactory {
         ServiceRegistry serviceRegistry = builder.build();
         return cfg.buildSessionFactory(serviceRegistry);
     }
+
+    public static SessionFactory createSessionFactoryPub(Configuration cfg) {
+        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
+        builder.applySettings(cfg.getProperties());
+        ServiceRegistry serviceRegistry = builder.build();
+        return cfg.buildSessionFactory(serviceRegistry);
+    }
 }

@@ -36,7 +36,8 @@ public class StartPageServlet extends HttpServlet {
         session.setAttribute("email", email);
         session.setAttribute("ssn", ssn);
 
-        User user = usrHbr.getUserByEmail(email);
+        //User user = usrHbr.getUserByEmail(email);
+        User user = usrHbr.getUserBySsn(ssn);
         System.out.println(user);
 
         if (user != null) {
@@ -51,10 +52,10 @@ public class StartPageServlet extends HttpServlet {
     private void moveToMenu(final HttpServletRequest req, final HttpServletResponse res, final String role) throws IOException, ServletException {
 
         if (role.equalsIgnoreCase("admin")) {
-            res.sendRedirect("/admin");
+            res.sendRedirect("/admin/users");
         }
         else if (role.equalsIgnoreCase("user")) {
-            req.getRequestDispatcher("/user").forward(req, res);
+            res.sendRedirect("/user/list");
         }
         else {
             req.getRequestDispatcher("/errpage.jsp").forward(req, res);
