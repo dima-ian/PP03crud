@@ -39,10 +39,6 @@
 </html>
 
 
-<%--        <button class="w3-btn w3-hover-light-blue w3-round-large w3-xlarge" onclick="location.href='/listhbr'">Users List</button>--%>
-<%--        <button class="w3-btn w3-hover-green w3-round-large w3-xlarge" onclick="location.href='/addhbr'">Add User</button>--%>
-<%--        <button class="w3-btn w3-hover-yellow w3-round-large w3-xlarge" onclick="location.href='/updhbr'">Edit User</button>--%>
-<%--        <button class="w3-btn w3-hover-red w3-round-large w3-xlarge" onclick="location.href='/delhbr'">Delete User</button>--%>
 
 
 

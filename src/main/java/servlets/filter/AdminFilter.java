@@ -34,9 +34,6 @@ public class AdminFilter implements Filter {
         if (user == null) {
             reqv.getRequestDispatcher("/errpage.jsp").forward(reqv, resp);
         }
-//        if (user.getRole().equalsIgnoreCase("user")) {
-//            reqv.getRequestDispatcher("/errpage.jsp").forward(reqv, resp);
-//        }
         if (user.getRole().equalsIgnoreCase("admin")) {
             HttpServletRequest request = (HttpServletRequest) reqv;
             reqv.getRequestDispatcher(request.getRequestURI()).forward(reqv, resp);
@@ -50,18 +47,4 @@ public class AdminFilter implements Filter {
 
     @Override
     public void destroy() {  }
-
-//    private User getSessionUser(ServletRequest srvReqv) {
-//        final HttpServletRequest req = (HttpServletRequest) srvReqv;
-//        final HttpSession session = req.getSession();
-//        usrHbr = UserHibrService.getInstance();
-//        final String email = (String) session.getAttribute("email");
-//        final String ssn = (String) session.getAttribute("ssn");
-//
-//        final User user = usrHbr.getUserByEmail(email);
-//
-//        if (user != null && user.getSsn().equals(ssn)) {
-//            return user;
-//        } else { return null; }
-//    }
 }

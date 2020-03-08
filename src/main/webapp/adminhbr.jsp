@@ -95,35 +95,7 @@
 
         </div>
 0
-        <div id="right" style="float:right; width:50%;">
 
-            <div class="w3-container w3-green">
-                <h2 class="w3-xlarge">Add user</h2>
-            </div>
-
-            <form method="post" class="w3-selection w3-light-grey w3-padding" action="<c:url value='/admin/add'/>">
-                <label>Name:
-                    <input type="text" name="name" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
-                </label>
-                <label>Sex:
-                    <input type="text" placeholder="male | female" name="sex" pattern="male|female" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%" ><br />
-                </label>
-                <label>Age:
-                    <input type="number" name="age" value="0" min="1" max="150" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
-                </label>
-                <label>Email:
-                    <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
-                </label>
-                <label>SSN:
-                    <input type="text" name="ssn" required="required" pattern="[A-Za-z0-9]{1,20}" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
-                </label>
-                <label>Role:
-                    <input type="text" placeholder="USER | ADMIN" name="role" pattern="USER|ADMIN" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
-                </label>
-                <button type="submit" class="w3-btn w3-green w3-round-large w3-margin-bottom">Submit</button>
-            </form>
-
-        </div>
 
     </div>
 
@@ -175,7 +147,7 @@
 
 
 <div class="w3-container w3-grey w3-opacity w3-center w3-padding">
-    <button class="w3-btn w3-round-large w3-green" onclick="location.href='/authpage.jsp'">Back to main</button>
+    <button class="w3-btn w3-round-large w3-green" onclick="location.href='/'">Back to main</button>
 </div>
 
 </body>

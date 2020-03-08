@@ -26,8 +26,6 @@ public class AdminServletHibr extends HttpServlet {
         List<User> usrsLst = usrHbr.getAllUsers();
         reqv.setAttribute("usrsLst", usrsLst);
         reqv.getRequestDispatcher("/adminhbr.jsp").forward(reqv,resp);
-
-        //requestDispatcher.forward(reqv, resp);
     }
 
     @Override

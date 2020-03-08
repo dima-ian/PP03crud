@@ -36,8 +36,8 @@ public class StartPageServlet extends HttpServlet {
         session.setAttribute("email", email);
         session.setAttribute("ssn", ssn);
 
-        //User user = usrHbr.getUserByEmail(email);
-        User user = usrHbr.getUserBySsn(ssn);
+        User user = usrHbr.getUserByEmail(email);
+        //User user = usrHbr.getUserBySsn(ssn);
         System.out.println(user);
 
         if (user != null) {

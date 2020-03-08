@@ -78,45 +78,8 @@
         </div>
     </div>
 
-<%--    <div class="w3-card-4">--%>
-<%--        <div class="w3-container w3-light-blue">--%>
-<%--            <h2 class="w3-xlarge">Users List</h2>--%>
-<%--        </div>--%>
 
-<%--        <table class="TFtable">--%>
-<%--            <thead>--%>
-<%--            <tr>--%>
-<%--                <th>Id</th>--%>
-<%--                <th>Name</th>--%>
-<%--                <th>Sex</th>--%>
-<%--                <th>Age</th>--%>
-<%--                <th>Email</th>--%>
-<%--                <th>SSN</th>--%>
-<%--                <th>Role</th>--%>
-<%--            </tr>--%>
-<%--            </thead>--%>
-
-<%--            <tbody>--%>
-<%--            <c:forEach items="${usrsLst}" var="user">--%>
-<%--                <tr>--%>
-<%--                    <td>${user.id}</td>--%>
-<%--                    <td>${user.name}</td>--%>
-<%--                    <td>${user.sex}</td>--%>
-<%--                    <td>${user.age}</td>--%>
-<%--                    <td>${user.email}</td>--%>
-<%--                    <td>${user.ssn}</td>--%>
-<%--                    <td>${user.role}</td>--%>
-<%--                </tr>--%>
-<%--            </c:forEach>--%>
-<%--            </tbody>--%>
-<%--        </table>--%>
-
-<%--    </div>--%>
 </div>
-
-<%--<div class="w3-container w3-grey w3-opacity w3-center w3-padding">--%>
-<%--    <button class="w3-btn w3-round-large w3-green" onclick="location.href='/authpage.jsp'">Back to main</button>--%>
-<%--</div>--%>
 
 </body>
 </html>
