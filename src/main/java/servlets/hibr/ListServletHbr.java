@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
- // name = "ShowAllUsersHbr", description = "Вывод всех пользователей - списком...", urlPatterns =
-
 @WebServlet("/user/list")
 public class ListServletHbr extends HttpServlet {
 

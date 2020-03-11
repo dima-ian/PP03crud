@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
-//name = "AddUserHbr",      description = "Add a user - 1 ...",   urlPatterns =
 @WebServlet("/admin/add")
 public class AddServletHibr extends HttpServlet {
 

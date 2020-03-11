@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
-// name = "UpdUserHbr",   description = "Редактирование данных пользователя - Updating...",   urlPatterns =
-
 @WebServlet("/admin/users")
 public class AdminServletHibr extends HttpServlet {
 

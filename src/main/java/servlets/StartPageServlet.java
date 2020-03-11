@@ -37,8 +37,6 @@ public class StartPageServlet extends HttpServlet {
         session.setAttribute("ssn", ssn);
 
         User user = usrHbr.getUserByEmail(email);
-        //User user = usrHbr.getUserBySsn(ssn);
-        System.out.println(user);
 
         if (user != null) {
             moveToMenu(reqv, resp, user.getRole());

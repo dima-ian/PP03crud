@@ -30,8 +30,6 @@ public class UserFilter implements Filter {
 
         final User user = usrHbr.getUserByEmail(email);
 
-        System.out.println("User filter: " + user);
-
         if (user == null) {
             reqv.getRequestDispatcher("/errpage.jsp").forward(reqv, resp);
         }

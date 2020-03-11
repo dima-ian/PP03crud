@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-//name = "DelUserHbr",
-//        description = "Редактирование данных пользователя - Updating...",
-//        urlPatterns =
 
 @WebServlet("/admin/del")
 public class DelServletHibr extends HttpServlet {

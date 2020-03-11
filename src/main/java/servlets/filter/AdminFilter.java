@@ -29,8 +29,6 @@ public class AdminFilter implements Filter {
 
         final User user = usrHbr.getUserByEmail(email);
 
-        System.out.println("Admin filter: " + user);
-
         if (user == null) {
             reqv.getRequestDispatcher("/errpage.jsp").forward(reqv, resp);
         }
